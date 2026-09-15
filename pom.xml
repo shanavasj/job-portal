@@ -14,8 +14,8 @@
     <groupId>com.shanavas</groupId>
     <artifactId>job-portal</artifactId>
     <version>1.0.0</version>
-<packaging>jar</packaging>  
-  <name>job-portal</name>
+    <packaging>war</packaging>
+    <name>job-portal</name>
     <description>Job Portal Web Application - Spring Boot, Spring MVC, Spring Data JPA, PostgreSQL, JSP</description>
 
     <properties>
@@ -49,10 +49,10 @@
         </dependency>
 
         <!-- JSP support: Tomcat Jasper (JSP engine) + JSTL tags -->
- <dependency>
+        <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
-        </dependency>      
+        </dependency>
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
@@ -75,6 +75,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
             </plugin>
         </plugins>
     </build>
